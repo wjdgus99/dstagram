@@ -12,10 +12,10 @@ def photo_list(request):
 class PhotoUploadView(CreateView):
     model = Photo
     fields = ['photo', 'text']
-    template_name = 'photo/uplodad.html'
+    template_name = 'photo/upload.html'
 
     def form_valid(self, form):
-        form.instance.author_id = self.request.uesr.id
+        form.instance.author_id = self.request.user.id
         if form.is_valid():
             form.instance.save()
             return redirect('/')
