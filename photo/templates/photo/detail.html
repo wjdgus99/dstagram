@@ -16,6 +16,8 @@
         Delete</a>
       <a href="{% url 'photo:photo_update' pk=object.id %}" class="btn btn-outline-success btn-sm float-rignt">
         Update</a>
+        {% load disqus_tags %}
+        {% disqus_show_comments %}
     </div>
     <div class="col-md-2"></div>
   </div>
